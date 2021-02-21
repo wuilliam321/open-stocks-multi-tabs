@@ -1,0 +1,7 @@
+.site-url {
+  display: inline-block;
+}
+
+input[type=button] {
+  margin: 2px 5px;
+}

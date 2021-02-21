@@ -1,0 +1,23 @@
+{
+  "name": "Stock Ticket Multi Tabs",
+  "description": "Open your stock ticker on multiple sites in a click",
+  "version": "1.0",
+  "manifest_version": 3,
+  "permissions": ["storage", "tabs"],
+  "action": {
+    "default_popup": "index.html",
+    "default_icon": {
+      "16": "get_started16.png",
+      "32": "get_started32.png",
+      "48": "get_started48.png",
+      "128": "get_started128.png"
+    }
+  },
+  "icons": {
+    "16": "get_started16.png",
+    "32": "get_started32.png",
+    "48": "get_started48.png",
+    "128": "get_started128.png"
+  },
+  "options_page": "options.html"
+}

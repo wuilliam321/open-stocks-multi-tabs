@@ -1,0 +1,32 @@
+{
+  "name": "open-stocks-multi-tabs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/wuilliam321/open-stocks-multi-tabs",
+  "author": "Wuilliam Lacruz",
+  "license": "MIT",
+  "scripts": {
+    "dev": "parcel warch src/*.html --out-dir dist",
+    "build": "parcel build --no-content-hash src/*.html --out-dir dist"
+  },
+  "dependencies": {
+    "parcel-bundler": "^1.12.4",
+    "parcel-plugin-clean-dist": "^0.0.6",
+    "parcel-plugin-static-files-copy": "^2.5.1"
+  },
+  "devDependencies": {
+    "typescript": "^4.1.5"
+  },
+  "staticFiles": {
+    "staticPath": [
+      {
+        "staticPath": "src/static"
+      },
+      {
+        "staticPath": "src/manifest/manifest.json"
+      }
+    ],
+    "distPath": "dist",
+    "watcherGlob": "**"
+  }
+}
