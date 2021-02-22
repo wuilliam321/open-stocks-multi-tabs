@@ -10,6 +10,7 @@
     "build": "parcel build --no-content-hash src/*.html --out-dir dist"
   },
   "dependencies": {
+    "@types/chrome": "^0.0.132",
     "parcel-bundler": "^1.12.4",
     "parcel-plugin-clean-dist": "^0.0.6",
     "parcel-plugin-static-files-copy": "^2.5.1"

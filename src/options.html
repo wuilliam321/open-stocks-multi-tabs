@@ -8,15 +8,21 @@
     <div>
       <p>Here you can customize webpages:</p>
       <p>
+      <form action="" id="add-site-form">
         <input
           type="text"
           id="new_site"
-          placeholder="http://website.com/q=<TKR>"
+          placeholder="Enter ticker and press Add"
           autofocus="true"
+          value="TICKER"
         />
-        <input type="button" id="add_site" value="Add" />
+        <input type="submit" id="add_site" value="Add" />
         <br />
-        <small><code>&lt;TKR&gt;</code> is mandatory</small>
+        <span>ie: http://website.com/q=TICKER</span>
+        <br />
+        <small><code>TICKER</code> word is mandatory</small>
+        </form>
+
       </p>
       <ol id="sites"></ol>
     </div>

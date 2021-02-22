@@ -6,12 +6,17 @@
   <body>
     <form action="" id="form">
       <input
+        type="text"
         id="ticker"
         placeholder="Enter Ticker (ie: VOO)"
         value=""
         autofocus="true"
+        class=""
       />
-      <button type="submit">Open in Tabs</button>
+      <button type="submit">Go!</button> |
+      <a href="#" id="close-tabs">Close all</a> |
+      <a href="#" id="go-to-options">Options</a>
+      <ol id="tabs"></ol>
     </form>
 
     <script src="index.ts"></script>
