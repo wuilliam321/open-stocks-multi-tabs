@@ -46,12 +46,17 @@ async function renderAvailableTabs() {
   const sites = await app.getAllSites();
   const sitesContainer = document.getElementById('tabs');
   sitesContainer.innerHTML = '';
+  if (!sites.length) {
+    const err = ui.buildWelcomeMessage();
+    sitesContainer.append(err);
+  }
+
   sites.forEach(site => {
     const sitesList = ui.buildSitesList();
     const enabledCheckbox = ui.buildEnabledCheckbox(site);
     enabledCheckbox.addEventListener('click', handleToggleSiteState);
     const siteBody = ui.buildSiteElement(site);
-    sitesList.append(enabledCheckbox);
+    siteBody.prepend(enabledCheckbox);
     sitesList.append(siteBody);
     sitesContainer.appendChild(sitesList);
   });

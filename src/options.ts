@@ -1,8 +1,24 @@
 import app, { TICKET_PLACEHOLDER } from './app';
 import ui from './ui';
 
+const SITES = [
+  { url: 'https://www.google.com/search?q=TICKER', enabled: true },
+  { url: 'https://finance.yahoo.com/quote/TICKER', enabled: true },
+  { url: 'https://marketchameleon.com/Overview/TICKER', enabled: true },
+  { url: 'https://www.earningswhispers.com/stocks/TICKER', enabled: true },
+  { url: 'https://www.morningstar.com/search?query=TICKER', enabled: true },
+  { url: 'https://www.tradingview.com/symbols/TICKER', enabled: true },
+  { url: 'https://www.sectorspdr.com/sectorspdr/resolve/TICKER', enabled: true },
+  { url: 'https://finviz.com/quote.ashx?t=TICKER', enabled: true },
+];
+
 const addForm = <HTMLButtonElement>document.getElementById('add-site-form');
 addForm.addEventListener('submit', handleAddNewSite);
+
+const loadSampleDataLink = <HTMLAnchorElement>(
+  document.getElementById('load-samples')
+);
+loadSampleDataLink.addEventListener('click', handleLoadSampleData);
 
 async function handleAddNewSite(event: InputEvent) {
   event.preventDefault();
@@ -36,12 +52,18 @@ async function handleAddNewSite(event: InputEvent) {
   try {
     await app.addSite({ url: urlInput.value, enabled: true });
     urlInput.value = TICKET_PLACEHOLDER;
-    handleRenderSites();
   } catch (e) {
     console.error('could not add site');
   }
 
+  handleRenderSites();
   urlInput.focus();
+}
+
+async function handleLoadSampleData(event) {
+  event.preventDefault();
+  await app.setSites(SITES);
+  handleRenderSites();
 }
 
 async function handleRenderSites() {
@@ -49,14 +71,14 @@ async function handleRenderSites() {
   sitesContainer.innerHTML = '';
   const sites = await app.getAllSites();
   if (!sites.length) {
-    sitesContainer.innerHTML = 'Empty list! add a new url to make it work!';
+    sitesContainer.append(ui.buildOptionsMessage());
   }
   sites.forEach(site => {
     const sitesList = ui.buildSitesList();
     const deleteBtn = ui.buildSiteDeleteBtn(site);
     deleteBtn.addEventListener('click', handleDeteleSite);
     const siteBody = ui.buildSiteElement(site);
-    sitesList.append(deleteBtn);
+    siteBody.prepend(deleteBtn);
     sitesList.append(siteBody);
     sitesContainer.appendChild(sitesList);
   });

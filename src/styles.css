@@ -12,6 +12,21 @@ li {
   list-style: none;
 }
 
+li label {
+  padding: 5px 0px;
+  display: block;
+  width: 100%;
+  cursor: pointer;
+}
+
+li label:hover {
+  background-color: #ccc;
+}
+
+input[type='checkbox'] {
+  margin: 0px 5px;
+}
+
 input[type='button'] {
   margin: 2px 5px;
 }
@@ -19,7 +34,14 @@ input[type='button'] {
 input[type='text'].error {
   border-color: red;
   color: red;
-  background-color:#FCC;
+  background-color: #fcc;
+}
+
+div.success {
+  background-color: #080;
+  color: white;
+  padding: 5px 10px;
+  margin-top: 10px;
 }
 
 .site-url {

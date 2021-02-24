@@ -63,6 +63,12 @@ function deleteSite(site: Site): Promise<Site> {
   });
 }
 
+function setSites(sites: Site[]): Promise<Site[]> {
+  return new Promise(resolve => {
+    storage.set({ sites }, () => resolve(sites));
+  });
+}
+
 function addSite(site: Site): Promise<Site> {
   return new Promise((resolve, reject) => {
     if (!isValidURL(site.url)) {
@@ -108,6 +114,7 @@ const app = {
   findSiteBy,
   deleteSite,
   addSite,
+  setSites,
   updateSite,
 };
 

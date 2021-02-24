@@ -1,7 +1,7 @@
 {
   "name": "Stock Ticket Multi Tabs",
   "description": "Open your stock ticker on multiple sites in a click",
-  "version": "1.0",
+  "version": "1.0.1",
   "manifest_version": 3,
   "permissions": ["storage", "tabs"],
   "action": {
