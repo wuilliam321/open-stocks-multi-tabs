@@ -2,7 +2,7 @@
 
 A little chrome-extension to make it easy to analyze your Ticker Stock.
 
-## [Install Now](https://chrome.google.com/webstore/detail/stock-ticket-multi-tabs)
+## [Install Now](https://chrome.google.com/webstore/detail/stock-ticket-multi-tabs/ejamfdilkiieplhojmmbbnljpkfclmpd?hl=en&authuser=0)
 
 ## Stack
 * Typescript
